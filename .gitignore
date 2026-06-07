@@ -39,3 +39,8 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+#custom
+QuantMetric.md
+Technologies.md
+Guidelines.md
