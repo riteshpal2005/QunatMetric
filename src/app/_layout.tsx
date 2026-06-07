@@ -7,7 +7,7 @@ import { ThemeProvider, DarkTheme as NavigationDarkTheme } from '@react-navigati
 // Providers and Config
 import { queryClient, queryClientPersister } from '@/utils/query.config';
 import { AppTheme } from '@/theme/tokens';
-import '@/i18n.config'; // We'll verify this path shortly
+import '@/utils/i18n.config';
 import { ErrorBoundary } from '@/components/feedback/ErrorBoundary';
 
 const CustomNavigationTheme = {
@@ -32,17 +32,7 @@ export default function RootLayout() {
       <PaperProvider theme={AppTheme}>
         <ThemeProvider value={CustomNavigationTheme}>
           <ErrorBoundary>
-            <Stack
-              screenOptions={{
-                headerStyle: {
-                  backgroundColor: AppTheme.colors.surface,
-                },
-                headerTintColor: AppTheme.colors.primary,
-                headerTitleStyle: {
-                  fontWeight: 'bold',
-                },
-              }}
-            />
+            <Stack screenOptions={{ headerShown: false }} />
           </ErrorBoundary>
         </ThemeProvider>
       </PaperProvider>
